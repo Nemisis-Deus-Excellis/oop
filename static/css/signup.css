@@ -1,0 +1,60 @@
+.signup{
+    display:table;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 35%;
+    margin-right:20%;
+}
+
+
+input[type=email], input[type=password], input[type=name],input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+}
+
+button {
+    background-color: #F4720A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+label{
+    display: none;
+}
+
+.signupbtn {
+    width: 100%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.signupbtn:hover{
+    cursor: pointer;
+}

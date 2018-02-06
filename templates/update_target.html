@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% from "includes/_formhelper.html" import render_field %}
+    <h1>Target</h1>
+    <script>
+    </script>
+    <form method="POST" action="newtarget">
+
+        <div class="form-group">
+            {{ render_field(form.goals, class_="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.category, class_="radio-inline") }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.status, class_="radio-inline") }}
+        </div>
+        <div class="form-group">
+            {{ render_field(form.number, class_="form-control") }}
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-info"/>
+        </div>
+
+    </form>
+{% endblock %}

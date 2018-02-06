@@ -1,0 +1,40 @@
+/* CSS for planner .html */
+
+ .content {
+        margin-top: 95px;
+        text-align: center;
+        font-size: 120%;
+        margin-bottom: 95px;
+
+}
+
+ .content h1{
+        color:black;
+        margin-bottom: -80px;
+    }
+
+h3 {
+    text-align: center;
+    color: black
+}
+
+.agebutton {
+    width: 250px;
+    height: 90px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border: 2px solid #d3d3d3;
+    color: black;
+
+}
+
+.agebutton:hover {
+    background-color: #ffa500;
+}
+
+
+
+
+

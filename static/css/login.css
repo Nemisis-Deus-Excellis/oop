@@ -1,0 +1,55 @@
+.login-form{
+    display:table;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 45%;
+    margin-right:20%;
+}
+
+input[type=name], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+}
+
+button {
+    background-color: #F4720A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+label{
+    display: none;
+}
+
+.loginbtn {
+    width: 100%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.loginbtn:hover{
+    cursor: pointer;
+}
+

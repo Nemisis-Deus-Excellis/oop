@@ -1,0 +1,41 @@
+events{
+display:table;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+    margin-right:20%;
+}
+div{
+    align-content: center;
+}
+table{
+    align-content:normal;
+
+}
+th{
+    padding: 5px;
+}
+table{
+    alignment: left;
+}
+div[class='row']{
+    align-self: normal;
+}
+section{
+    position: initial;
+    align-content: normal;
+}
+th[class='description']{
+    width: 75%;
+    text-align: right;
+    position: relative;
+}
+th[class='image']{
+    position: fixed;
+}
+div[class='container']{
+    position: inherit;
+}
+section{
+background: white;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!--Google Font link-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+
+
+    <!--For Plugins external css-->
+    <link href="{{ url_for('static', filename='plugins.css')}}" rel="stylesheet">
+
+    <!--Theme custom css -->
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+    <!--Theme Responsive css-->
+    <link href="{{ url_for('static', filename='css/responsive.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/planner.css')}}" rel="stylesheet">
+
+
+
+    <script src="../static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+
+{% block topscript %}{% endblock %}
+
+{% include 'includes/_navbar.html' %}
+
+
+{% block body %}{% endblock %}
+
+
+{% include 'includes/_footer.html' %}
+
+<script src="../static/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="../static/js/vendor/bootstrap.min.js"></script>
+
+<script src="../static/js/jquery.magnific-popup.js"></script>
+<script src="../static/js/jquery.mixitup.min.js"></script>
+<script src="../static/js/jquery.easing.1.3.js"></script>
+<script src="../static/js/jquery.masonry.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="http://maps.google.com/maps/api/js"></script>
+<script src="../static/js/gmaps.min.js"></script>
+
+{% block botscript %}{% endblock %}
+</body>
+</html>
