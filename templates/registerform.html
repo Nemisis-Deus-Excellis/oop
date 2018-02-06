@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block title %}Healthy+ - Program Registration{% endblock %}
+{% block body %}
+{% from "includes/_formhelper.html" import render_field %}
+    <body data-spy="scroll" data-target=".navbar" data-offset="200">
+        <div class="content">
+            <h1>
+                Register for a program now!
+            </h1>
+
+        </div>
+
+        <div class="content">
+            {% include 'includes/_message.html' %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <form action="#" id="" method="POST">
+                                <div>{{ render_field(registerform.name, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.gender, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.email, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.contact, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.weight, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.height, class_="form-control") }}</div></br>
+
+                                <div>{{ render_field(registerform.program, class_="form-control") }}</div></br>
+
+                                <input class="agebutton" type="submit" value="SUBMIT">
+
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+
+    </body>
+{% endblock %}

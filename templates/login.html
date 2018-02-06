@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block title %}Healthy+ - Login{% endblock %}
+{% block body %}
+
+    {% from "includes/_formhelper.html" import render_field %}
+    <div class="content">
+        <h2>LOGIN</h2>
+    <div class="content">
+                {% include 'includes/_message.html' %}</div>
+        </div>
+        {% if form.errors %}
+            <div class="content">
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+                            {% for error in field_errors %}
+                                <li>{{ form[field_name].label }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+    {% endif %}
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form method="POST" action="login">
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                {{ render_field(form.username, class_="form-control") }}
+                                 {{ render_field(form.password, class_="form-control") }}
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            <div class="form-row">
+                                <div class="form-group col-md-11">
+
+
+                                </div>
+                                <div>
+                                    <input type="submit" value="Submit" class="btn btn-info"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <a href="/signup">Don't have an account? Click here to sign up!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

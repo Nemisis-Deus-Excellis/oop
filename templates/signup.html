@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block title %}Healthy+ - Sign Up{% endblock %}
+{% block body %}
+{% from "includes/_formhelper.html" import render_field %}
+    <body data-spy="scroll" data-target=".navbar" data-offset="200">
+        <div class="content">
+            <h1>
+                Sign Up
+            </h1>
+            <div class="content">{% include 'includes/_message.html' %}</div>
+        </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <form action="#" id="" method="POST">
+                                {{ render_field(form.name, class="form-control") }}
+                                <br>
+                                {{ render_field(form.email, class="form-control") }}
+                                <br>
+                                {{ render_field(form.birthday, class="form-control") }}
+                                <br>
+                                {{ render_field(form.gender, class="form-control") }}
+                                <br>
+                                {{ render_field(form.region, class="form-control") }}
+                                <br>
+                                {{ render_field(form.username, class="form-control") }}
+                                <br>
+                                {{ render_field(form.password, class="form-control") }}
+                                <br>
+                                {{ render_field(form.confirm, class="form-control") }}
+
+                                <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+
+    </body>
+{% endblock %}

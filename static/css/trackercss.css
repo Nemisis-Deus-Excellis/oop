@@ -1,0 +1,72 @@
+	body{
+		padding-top: 130px;
+	}
+	.bmi{
+		display: inline-block;
+	}
+	.targetsettings{
+		display: inline-block;
+	}
+	.functions{
+		width:100%;
+		padding:auto;
+		text-align: center;
+	}
+    .content button{
+		background-color:#ff7200;
+		padding: 20px;
+		color:white;
+		outline:none;
+		border: 10px;
+	}
+
+	.content button:hover{
+		border-radius: 25px;
+		outline:none;
+		border: 10px;
+	}
+
+	table{
+		height:100%;
+		table-layout: fixed;
+		border-collapse: separate;
+		border-spacing: 50px 0;
+        padding-bottom: 95px;
+        padding-top: 95px;
+    }
+
+	td {
+		padding: 10px 0;
+	}
+
+	#bmi1{
+		background-color:#FFB685;
+	}
+
+	#targetset{
+		background-color:#FFB685;
+	}
+    .content {
+        margin-top: 95px;
+        text-align: center;
+        font-size: 120%;
+        marign-bottom: 95px;
+    	display: block;
+    }
+    h1{
+        color:black;
+    }
+    .target{
+        background-color:#ff7200;
+		padding: 20px;
+		color:white;
+		outline:none;
+		border: 10px;
+		width: 100%;
+	}
+
+	.target input[type="submit"]:hover{
+		border-radius: 25px;
+		outline:none;
+		border: 10px;
+	}

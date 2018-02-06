@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% block title %}Planner - Fitness Program{% endblock %}
+{% block body %}
+
+    <body>
+
+        <section>
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-13">
+                        <h2>Here are some programs you might be interested in!</h2></br>
+
+
+                        <h3>Complimentary Taiji and Qigong Classes</h3>
+                        <img src="../static/images/taijiclass.jpg" width ="500"/></br>
+                        <p></p>
+                        <button class="accordion">Details</button>
+                        <div class="panel">
+                          <h4><strong>Start:</strong>   17 December, 2017 @ 7:30 pm</h4>
+                          <h4><strong>End:</strong> 25 March @ 8:30 pm</h4>
+                          <h4><strong>Cost:</strong>    Free</h4>
+                          <h4><strong>Event Categories:</strong>    Sports & Fitness</h4></br>
+                          <button onclick= "window.location.href='/registerprogram'" class="btn btn-primary">REGISTER HERE!</button>
+                        </div>
+
+
+                        <h3>Marina Run 2018</h3>
+                        <img src="../static/images/marinarun2018.jpg" width ="500"/></br>
+                        <p></p>
+                        <button class="accordion">Details</button>
+                        <div class="panel">
+                            <h4><strong>Date:</strong>  10 February 2018</h4>
+                            <h4><strong>Cost:</strong>    $45</h4>
+                            <h4><strong>Event Categories:</strong>    Sports & Fitness</h4></br>
+                            <button onclick= "window.location.href='/registerprogram'" class="btn btn-primary">REGISTER HERE!</button>
+                        </div>
+
+
+                        <h3>Run For Light</h3>
+                        <img src="../static/images/runforlight.jpg" width ="500"/></br>
+                        <p></p>
+                        <button class="accordion">Details</button>
+                        <div class="panel">
+                            <h4><strong>Start:</strong>   3 March 2018 5:00 pm - 10:00 pm</h4>
+                            <h4><strong>Cost:</strong>    $38</h4>
+                            <h4><strong>Event Categories:</strong>    Charity, Sports & Fitness</h4></br>
+                            <button onclick= "window.location.href='/registerprogram'" class="btn btn-primary">REGISTER HERE!</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
+
+    <style>
+        .accordion {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 33%;
+                    border: none;
+                    text-align: center;
+                    outline: none;
+                    font-size: 15px;
+                    transition: 0.4s;
+                }
+
+                .active, .accordion:hover {
+                    background-color: #ccc;
+                }
+
+                .panel {
+                    padding: 0 18px;
+                    display: none;
+                    background-color: white;
+                    overflow: hidden;
+                }
+    </style>
+    </body>
+{% endblock %}

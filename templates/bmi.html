@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block body %}
+    {% from "includes/_formhelper.html" import render_field %}
+         <style>
+        body{
+            padding-top: 130px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+         form{
+             margin:0 auto;
+         }
+         section{
+            margin: 0 auto;
+         }
+         #space{
+            padding-bottom: 50px;
+        }
+        </style>
+    <section id="bmi" class="bmi-form">
+        {% if session.logged_in %}
+        <div class="content">
+        <div class="container" align="center">
+            <div class="row">
+                <div class="col-sm-12">
+        <div id="space"></div>
+                <h2>Body Mass Index</h2>
+                <p>Are you at a healthy BMI range? Use our BMI calculator to check now!</p>
+                <div>
+                    <div class="container-mtd">
+                        <form name ="bmiform" method="POST" role="form" class="pure-form">
+                            <div name="height" class="form-group">
+                                {{ render_field(form.height, class_="form-control") }} <!-- m -->
+                            </div>
+                            <div name="weight" class="form-group">
+                                {{ render_field(form.weight, class_="form-control") }} <!-- kg -->
+                            </div>
+                            <button type="submit" class="btn btn-primary">Count BMI</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        {% else %}
+            <p>Please <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to access.</p>
+        {% endif %}
+    </section>
+    <div id="space"></div>
+    <!-- if bmi not good can use our food tracker to tracker your calories, or fitness -->
+{% endblock %}

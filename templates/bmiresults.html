@@ -1,0 +1,72 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+{% include 'includes/_message.html' %}
+{% from "includes/_formhelper.html" import render_field %}
+    <body>
+    <style>
+        body{
+            padding-top: 130px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        #space{
+            padding-bottom: 50px;
+        }
+        table{
+            width:100%;
+            text-align: center;
+            word-break: break-all;
+            margin: auto;
+        }
+        h1{
+            color:black;
+        }
+    </style>
+{% if session.logged_in %}
+    <h3>Your BMI is:</h3>
+    <h1>{{ bmilast }}</h1>
+    <br/>
+    {% if bmilast  < 18.5 %}
+         <h2>BMI too low, you are at risk.</h2>
+        <p>
+            These are a few suggestion on how you can improve your BMI.
+                <br>
+            1. Check out our healthy eating page <a href="/healthyeating">Healthy Eating page</a> here to see which recipes suits your needs.
+                <br>
+            2. Check out the <a href="/events">Events page</a> to see what kind of events is available.
+        </p>
+    {% elif  bmilast > 18.5 or bmilast < 25 %}
+        <h2>You are not at risk.</h2>
+        <p>
+            Good Job! Continue maintaining your BMI.
+        </p>
+    {% elif 25 < bmilast < 30 %}
+        <h2>BMI is high, you are at risk.</h2>
+        <p>
+            These are a few suggestion on how you can improve your BMI.
+                <br>
+            1. Check out our healthy eating page <a href="/healthyeating">Healthy Eating page</a> here to see which recipes suits your needs.
+                <br>
+            2. Check out the <a href="/events">Events page</a> to see what kind of events is available. </p>
+    {% else %}
+        <h2>BMI too high, you are at a high risk.</h2>
+        <p>
+            These are a few suggestion on how you can improve your BMI.
+                <br>
+            1. Check out our healthy eating page <a href="/healthyeating">Healthy Eating page</a> here to see which recipes suits your needs.
+                <br>
+            2. Check out the <a href="/events">Events page</a> to see what kind of events is available. </p>
+        </p>
+    {% endif %}
+    </br>
+	  <div class="container" align="left">
+			<embed type="image/svg+xml" src={{graph_data|safe}} style='max-width:1000px'/>
+	  </div>
+{% else %}
+    <p>Please <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to access.</p>
+{% endif %}
+    <div id="space"></div>
+</body>
+{% endblock %}
+</html>

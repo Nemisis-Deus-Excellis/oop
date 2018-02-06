@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% include 'includes/_message.html' %}
+{% from "includes/_formhelper.html" import render_field %}
+        <style>
+        body{
+            padding-top: 130px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        table{
+            table-layout: fixed;
+            border-collapse: collapse;
+            width:100%;
+            margin: auto;
+       }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        tr:hover{
+            background-color: #dddddd;
+        }
+        h1{
+            color:black;
+        }
+        #space{
+            padding-bottom: 50px;
+        }
+    </style>
+    <body>
+{% if session.logged_in %}
+    <h1 style="text-align:center">Targets</h1>
+    <br/>
+    <p>In this page, you can view your current health target(s)</p>
+    <br/>
+    <h3><a href="/newtarget">Create New Target</a></h3>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Goals</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Number of times</th>
+            <th>Last Updated</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for target_for in targets %}
+            <tr>
+                <td>{{ target_for.get_goals() }}</td>
+                {% if  target_for.get_category() == "physical" %}
+                    <td>Physical</td>
+                {% elif  target_for.get_category() == "diet" %}
+                    <td>Diet</td>
+                {% else %}
+                    <td>Habits</td>
+                {% endif %}
+                {% if target_for.get_status() == "active" %}
+                    <td>Active</td>
+                {% elif target_for.get_status() == "onhold" %}
+                    <td>On Hold</td>
+                {% elif target_for.get_status() == "notstarted" %}
+                    <td>Not Started</td>
+                {% elif target_for.get_status() == "completed" %}
+                    <td>Completed</td>
+                {% endif %}
+{#            "#}
+                <td>{{ target_for.get_number() }}</td>
+                <td>{{  target_for.get_date().format('%Y-%m-%d') }}</td>
+                <td id="updatetar"><a href="/update/{{target_for.get_target3()}}" class="btn btn-warning">Update</a></td>
+                <td><form action="{{url_for('delete_targets', id=target_for.get_target3())}}" method="post">
+                    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this target?');">
+                </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Please <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to access.</p>
+{% endif %}
+        <div id="space"></div>
+    </body>
+{% endblock %}

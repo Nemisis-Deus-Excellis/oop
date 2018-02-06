@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block title %}Healthy+ - Edit Profile{% endblock %}
+
+{% block body %}
+    {% from "includes/_formhelper.html" import render_field %}
+<div class="content">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="content">{% include 'includes/_message.html' %}</div>
+        </div>
+        <div class="col-sm-8">
+               <h3>UPDATE PROFILE</h3>
+           </div>
+                <form method="POST">
+                    <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+                     <div class="row">
+                         <div class="col-sm-8">
+                             <div class="form-group">
+                                 {{ render_field(form.name, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.username, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.birthday, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.gender, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.email, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.region, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.password, class_="form-control") }}
+                                 <br>
+                                 {{ render_field(form.confirm, class_="form-control") }}
+                                 <br>
+                                 <input type="submit" value="Submit" class="btn btn-primary">
+                                 <!--</div>-->
+                             </div>
+                         </div>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="./static/css/trackercss.css">
+</head>
+{% extends 'layout.html' %}
+{% block title %}Healthy+ - Tracker{% endblock %}
+{% block body %}
+
+<body data-spy="scroll" data-target=".navbar" data-offset="200">
+<link rel="stylesheet" href="./static/css/trackercss.css">
+
+    <div class="content">
+        <h1>Health Trackers</h1>
+        <br/>
+        <br/>
+        <br/>
+		<section id="trackers">
+        <p>This page allows you to navigate the different trackers we have.</p>
+            <table class="functions">
+                <tr>
+				<td id="bmi1">
+					<div class="bmi">
+						<p>Want to check your BMI?</p>
+						<a href="/bmi"><button>Click Here</button></a>
+					</div>
+				</td>
+				<td id="targetset">
+					<div class="targetsettings">
+						<p>See your target here</p>
+                        <a href="/viewtarget"><button>Target Settings</button></a>
+					</div>
+				</td>
+                </tr>
+			</table>
+        </section>
+    </div>
+    <div class="scrollup">
+        <a href="#"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+</body>
+{% endblock %}
+</html>

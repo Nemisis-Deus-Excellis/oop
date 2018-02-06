@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% include 'includes/_message.html' %}
+    {% from "includes/_formhelper.html" import render_field %}
+    {% if session.logged_in %}
+    <h1>Target</h1>
+        <div class="content">
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-12">
+            <form method="POST">
+
+                <div class="form-group">
+                    {{ render_field(form.goals, class_="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.category, class_="radio-inline") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.status, class_="radio-inline") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.number, class_="form-control") }}
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-info"/>
+                </div>
+            {% else %}
+                    <p>Please <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to access.</p>
+            {% endif %}
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+{% endblock %}
